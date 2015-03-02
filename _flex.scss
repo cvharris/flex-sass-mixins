@@ -107,7 +107,7 @@
 // Cross-axis Alignment
 // - applies to: flex containers
 // flex-start | flex-end | center | baseline | stretch
-@mixin align-items($align) when ($align: flex-start) {
+@mixin align-items($align) {
   @if ($align == flex-start) {
     -webkit-box-align: start;
     -moz-box-align: start;
@@ -120,7 +120,7 @@
     -webkit-align-items: $align;
     -ms-flex-align: end;
     align-items: $align;
-  } @else if ($align == baseline || $align == center || $align == stretch) { // baseline, center, and stretch are all the same
+  } @else { // baseline, center, and stretch are all the same
     -webkit-box-align: $align;
     -moz-box-align: $align;
     -webkit-align-items: $align;
@@ -149,7 +149,7 @@
     -webkit-align-content: $align;
     -ms-flex-line-pack: distribute;
     align-content: $align;
-  } @else if ($align == center || $align == stretch) { // center and stretch are the same
+  } @else { // center and stretch are the same
     -webkit-align-content: $align;
     -ms-flex-line-pack: $align;
     align-content: $align;
@@ -221,7 +221,7 @@
 // Cross-axis Alignment
 // - applies to: flex items
 // auto | flex-start | flex-end | center | baseline | stretch
-@mixin align-self($align) when ($align: flex-start) {
+@mixin align-self($align) {
   @if ($align == flex-start) {
     -ms-flex-item-align: start;
     -webkit-align-self: $align;
@@ -230,7 +230,7 @@
     -ms-flex-item-align: end;
     -webkit-align-self: $align;
     align-self: $align;
-  } @else if ($align == auto || $align == center || $align == baseline || $align == stretch) {
+  } @else {
     -ms-flex-item-align: $align;
     -webkit-align-self: $align;
     align-self: $align;
